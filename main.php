@@ -21,7 +21,7 @@
 </head>
 <body class="bg-light">
     <?php
-        if($_GET['status']) {
+        if($_GET['status'] == 'success') {
     ?>
         <script>
             $(document).ready(function() {
@@ -35,6 +35,22 @@
         </script>
 
     <?php } ?>
+    <?php
+        if($_GET['status'] == 'updated') {
+    ?>
+        <script>
+            $(document).ready(function() {
+                swal({
+                    title: "Success!",
+                    text: "Product updated successfully",
+                    icon: "success",
+                    button: "Done!",
+                });
+            })
+        </script>
+
+    <?php } ?>
+  
 
     <div class="container-fluid bg-dark text-white p-5 text-center">
         <h1>PHP CRUD IMAGE</h1>

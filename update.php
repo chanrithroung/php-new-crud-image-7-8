@@ -21,5 +21,5 @@
         $query_update = "UPDATE `Products` SET `name` = '$name', `price` = '$price', `quantity` = '$quantity', `thumbnail` = '$fileName', `updated_at` = '$now' WHERE `id` = '$id';";
         
         db_connect()->query(query: $query_update);
-        header("Location: main.php");
+        header("Location: main.php?status=updated");
     }
