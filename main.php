@@ -113,7 +113,9 @@
             $('#edit-name').val(name);
             $('#edit-quantity').val(quantity);
             $('#edit-price').val(price);
-            $('#old-thumbnail').attr('src', "http://localhost/myphp/crud_image/uploads/"+thumbnail );
+            // console.log($('#thumbnail'))
+            $('#display-thumbnail').attr('src', "http://localhost/myphp/crud_image/uploads/"+thumbnail );
+            $('#old-thumbnail').val(thumbnail);
 
         })
     });
@@ -177,7 +179,7 @@
       </div>
       <div class="modal-body">
       <form action="update.php" method="post" enctype="multipart/form-data">
-            <input id="edit-id" type="hidden">
+            <input id="edit-id" hidden name="edit-id" type="text">
             <div class="mb-3">
                 <input id="edit-name" name="name" class="form-control" type="text" placeholder="Product name..">
             </div>
@@ -189,10 +191,12 @@
             </div>
             <div class="mb-3">
                 <label for="thumbnail">Old Thumbnail</label>
-                <img class="d-block" width="200px" id="old-thumbnail" src="" alt="">
+                <input name="old-thumbnail" hidden id="old-thumbnail" type="text">
+                <img class="d-block" width="200px" id="display-thumbnail" src="" alt="">
             </div>
             <div class="mb-3">
                 <label for="thumbnail">Product Thumbnail</label>
+            
                 <input id="thumbnail" name="thumbnail" class="form-control" type="file" placeholder="Product name..">
                 
             </div>
